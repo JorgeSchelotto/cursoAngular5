@@ -1,0 +1,26 @@
+<table class="table table-bordered table-hover" [hidden]="peliculaSeleccionada">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Genero</th>
+      <th>Director</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pelicula of peliculas" (click)='editarPelicula(pelicula.id_pelicula)'>
+      <td>{{pelicula.titulo}}</td>
+      <td>{{pelicula.genero}}</td>
+      <td>{{pelicula.director}}</td>
+      <td><img [src]=pelicula.foto style="height:100px"></td>
+    
+    
+    </tr>
+  </tbody>
+</table>
+
+
+<div *ngIf="peliculaSeleccionada"> 
+    <app-detalle [idPelicula]="peliculaSeleccionada" 
+    (cancelar)="cancelarEdicion($event)"></app-detalle>
+</div>
