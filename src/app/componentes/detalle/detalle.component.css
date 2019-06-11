@@ -1,0 +1,10 @@
+.mr-20{
+    margin-right: 20px;
+}
+.button{
+    margin-left: 0px !important;
+}
+
+input.ng-invalid{
+    border-color: red !important;
+}
